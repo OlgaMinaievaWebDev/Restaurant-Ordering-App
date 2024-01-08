@@ -14,9 +14,9 @@ function getFeedHtml(menuArray) {
               <div class="name">
                 <h2>${name}</h2>
                 <p>${listIngredients}</p>
-                 <p>${price}</p>
+                 <h4>$${price}</h4>
                </div>
-           <button id="add">+</button>
+           <button id="add" class="add">+</button>
        </div>
   `;
     })

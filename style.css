@@ -60,10 +60,18 @@ header span {
   border-bottom: 1px solid #8b8b8b;
 }
 
-button {
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.add {
   margin-left: auto;
   padding: 10px;
-  color: #3c3c3c;
+  color: red;
+  font-weight: 600;
+  font-size: 16px;
   background-color: #ffffff;
   border: 1px solid #8b8b8b;
   border-radius: 50%;
@@ -72,4 +80,58 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.order-box {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  gap: 5px;
+}
+
+.order-box h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.line {
+  height: 2px;
+  background-color: #393333;
+}
+
+.order {
+  display: flex;
+  gap: 10px;
+}
+
+.order p {
+  margin-left: auto;
+}
+
+.remove {
+  border: none;
+  color: #bbbbbb;
+  background-color: transparent;
+  margin-left: 10px;
+}
+
+.complete {
+  background-color: #16db99;
+  color: #ffffff;
+  border: none;
+  padding: 18px 175px;
+  border-radius: 3px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.complete:active {
+  transform: scale(0.99);
 }
