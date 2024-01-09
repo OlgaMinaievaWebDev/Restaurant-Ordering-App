@@ -83,7 +83,7 @@ header span {
 }
 
 .order-box {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 500px;
   margin: 0 auto;
