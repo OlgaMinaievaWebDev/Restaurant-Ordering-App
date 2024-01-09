@@ -1,12 +1,13 @@
 import { menuArray } from "./data.js";
-
+const orderBox = document.getElementById("order");
 let order = [];
-let price = 0;
+let totalPrice = 0;
 //eventlistener
 document.addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.dataset.add) {
     handleClickAdd(e.target.dataset.add);
+    orderBox.style.display = "flex";
   }
 });
 
@@ -14,7 +15,25 @@ function handleClickAdd(itemId) {
   let itemObj = menuArray.filter(function (item) {
     return item.id === itemId;
   })[0];
-  console.log(itemObj);
+  order.push(itemObj);
+  renderOrder();
+}
+
+//order html
+function orderHtml() {
+  let orderHtml = "";
+  order.forEach(function (order) {
+    orderHtml += `
+  <h4>${order.name}</h4>
+  <button class="remove">remove</button>
+  <p>$${order.price}</p>
+  `;
+  });
+  return orderHtml;
+}
+
+function renderOrder() {
+  document.getElementById("addItem").innerHTML = orderHtml();
 }
 
 //menu html
