@@ -15,7 +15,11 @@ function handleClickAdd(itemId) {
   let itemObj = menuArray.filter(function (item) {
     return item.id === itemId;
   })[0];
-  order.push(itemObj);
+  if (!order.includes(itemObj)) {
+    order.push(itemObj);
+  } else {
+   
+  }
   renderOrder();
 }
 
@@ -24,9 +28,11 @@ function orderHtml() {
   let orderHtml = "";
   order.forEach(function (order) {
     orderHtml += `
+    <div class="card">
   <h4>${order.name}</h4>
   <button class="remove">remove</button>
   <p>$${order.price}</p>
+  </div>
   `;
   });
   return orderHtml;

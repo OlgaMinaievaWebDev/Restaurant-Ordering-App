@@ -103,6 +103,7 @@ header span {
 
 .order {
   display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -115,6 +116,11 @@ header span {
   color: #bbbbbb;
   background-color: transparent;
   margin-left: 10px;
+}
+
+.card {
+ display: flex;
+ 
 }
 
 .complete {
