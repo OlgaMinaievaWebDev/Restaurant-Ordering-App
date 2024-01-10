@@ -144,3 +144,9 @@ button:active {
 .complete:active {
   transform: scale(0.99);
 }
+
+
+.price {
+ display: flex;
+ justify-content: space-between;
+}

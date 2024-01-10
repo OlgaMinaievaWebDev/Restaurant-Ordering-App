@@ -1,5 +1,6 @@
 import { menuArray } from "./data.js";
 const orderBox = document.getElementById("order");
+const totalPriceEl = document.getElementById("total-price");
 let order = [];
 let totalPrice = 0;
 //eventlistener
@@ -20,6 +21,7 @@ function handleClickAdd(itemId) {
 
   if (!order.includes(itemObj)) {
     order.push(itemObj);
+    getTotalPrice(order);
     renderOrder();
     orderBox.classList.remove("active");
   }
@@ -33,12 +35,22 @@ function removeItem(itemId) {
   if (order.includes(targetObj)) {
     const index = order.indexOf(targetObj);
     order.splice(index, 1);
+    getTotalPrice(order);
     renderOrder();
   }
   if (order.length < 1) {
     orderBox.classList.add("active");
     renderOrder();
   }
+}
+
+//calculate total price of items
+function getTotalPrice(arr) {
+  let finalPrice = order.reduce(function (itemPrice, totalPrice) {
+    return itemPrice + totalPrice.price;
+  }, 0);
+  console.log(finalPrice);
+  return (totalPriceEl.innerHTML = "$" + finalPrice);
 }
 
 //add item to order html
@@ -51,6 +63,7 @@ function orderHtml() {
   <button class="remove" data-remove="${order.id}">remove</button>
   <p>$${order.price}</p>
   </div>
+  
   `;
   });
   return orderHtml;
@@ -72,7 +85,7 @@ function menuHtml() {
                 <p>${item.ingredients}</p>
                  <h4>$${item.price}</h4>
                </div>
-           <button class="add" data-add="${item.id}">+</button>
+           <button class="add" id="${item.name}" data-add="${item.id}">+</button>
        </div>
   `;
   });
