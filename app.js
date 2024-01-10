@@ -8,6 +8,8 @@ document.addEventListener("click", function (e) {
   if (e.target.dataset.add) {
     handleClickAdd(e.target.dataset.add);
     orderBox.style.display = "flex";
+  } else if (e.target.dataset.remove) {
+   console.log(e.target.dataset.remove);
   }
 });
 
@@ -17,10 +19,8 @@ function handleClickAdd(itemId) {
   })[0];
   if (!order.includes(itemObj)) {
     order.push(itemObj);
-  } else {
-   
-  }
-  renderOrder();
+    renderOrder();
+  } 
 }
 
 //order html
@@ -30,7 +30,7 @@ function orderHtml() {
     orderHtml += `
     <div class="card">
   <h4>${order.name}</h4>
-  <button class="remove">remove</button>
+  <button class="remove" data-remove="${order.id}">remove</button>
   <p>$${order.price}</p>
   </div>
   `;
