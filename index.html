@@ -31,24 +31,23 @@
         </div>
       </div>
     </div>
-    <form action="#" class="form">
+    <div class="modal-box active" id="modal-form">
+    <form method="post" action="#" class="form">
      <h2>Enter card Details</h2>
      <div class="information">
      <div class="userName">
-      <label for="userName"></label>
-     <input type="text" name="userName" placeholder="Enter your name" required>
+     <input type="text" name="userName" placeholder="Enter your name" autocomplete="cc-name" required>
      </div>
      <div class="cardNumber">
-      <label for="cardNumber"></label>
-     <input type="tel" inputmode="numeric" pattern="[0-9]*" name="cardNumber" placeholder="Enter card number"  maxlength="16" required>
+     <input type="text"  name="cardNumber" placeholder="Enter card number"  maxlength="16" required>
      </div>
      <div class="cvvNumber">
-      <label for="cvvNumber"></label>
-     <input type="text" maxlength="3" name="cvvNumber" placeholder="Enter CVV">
+     <input type="text" maxlength="3" name="cvvNumber" placeholder="Enter CVV" required>
      </div>
      <button class="complete" type="submit">Pay</button>
      </div>
     </form>
+    </div>
     <script src="app.js" type="module"></script>
   </body>
 </html>

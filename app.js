@@ -12,16 +12,19 @@ document.addEventListener("click", function (e) {
   } else if (e.target.dataset.remove) {
     removeItem(e.target.dataset.remove);
   } else if (e.target.dataset.complete) {
-   completeOrder(e.target.dataset.complete);
+    completeOrder(e.target.dataset.complete);
   }
 });
 
+document.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log("yeaaa");
+});
 
-//complete form 
+//complete form
 function completeOrder() {
- console.log('hey')
+  document.getElementById("modal-form").classList.remove("active");
 }
-
 
 //add item to order
 function handleClickAdd(itemId) {
@@ -61,8 +64,6 @@ function getTotalPrice(arr) {
   }, 0);
   return (totalPriceEl.innerHTML = "$" + finalPrice);
 }
-
-
 
 //add item to order html
 function orderHtml() {
