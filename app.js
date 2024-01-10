@@ -14,6 +14,11 @@ document.addEventListener("click", function (e) {
   }
 });
 
+document.addEventListener('submit', function (e) {
+ e.preventDefault()
+ console.log('clicked')
+})
+
 //add item to order
 function handleClickAdd(itemId) {
   let itemObj = menuArray.filter(function (item) {
@@ -25,7 +30,6 @@ function handleClickAdd(itemId) {
     getTotalPrice(order);
     renderOrder();
     orderBox.classList.remove("active");
-  } else {
   }
 }
 
