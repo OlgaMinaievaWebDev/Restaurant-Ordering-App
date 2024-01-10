@@ -11,13 +11,17 @@ document.addEventListener("click", function (e) {
     handleClickAdd(e.target.dataset.add);
   } else if (e.target.dataset.remove) {
     removeItem(e.target.dataset.remove);
+  } else if (e.target.dataset.complete) {
+   completeOrder(e.target.dataset.complete);
   }
 });
 
-document.addEventListener('submit', function (e) {
- e.preventDefault()
- console.log('clicked')
-})
+
+//complete form 
+function completeOrder() {
+ console.log('hey')
+}
+
 
 //add item to order
 function handleClickAdd(itemId) {
@@ -57,6 +61,8 @@ function getTotalPrice(arr) {
   }, 0);
   return (totalPriceEl.innerHTML = "$" + finalPrice);
 }
+
+
 
 //add item to order html
 function orderHtml() {
