@@ -83,12 +83,16 @@ header span {
 }
 
 .order-box {
-  display: none;
+  display: flex;
   flex-direction: column;
   width: 500px;
   margin: 0 auto;
   margin-bottom: 40px;
   gap: 5px;
+}
+
+.active {
+  display: none;
 }
 
 .order-box h2 {
@@ -119,8 +123,7 @@ header span {
 }
 
 .card {
- display: flex;
- 
+  display: flex;
 }
 
 .complete {

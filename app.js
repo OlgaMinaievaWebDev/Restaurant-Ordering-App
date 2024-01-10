@@ -7,28 +7,46 @@ document.addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.dataset.add) {
     handleClickAdd(e.target.dataset.add);
-    orderBox.style.display = "flex";
   } else if (e.target.dataset.remove) {
-   console.log(e.target.dataset.remove);
+    removeItem(e.target.dataset.remove);
   }
 });
 
+//add item to order
 function handleClickAdd(itemId) {
   let itemObj = menuArray.filter(function (item) {
     return item.id === itemId;
   })[0];
+
   if (!order.includes(itemObj)) {
     order.push(itemObj);
     renderOrder();
-  } 
+    orderBox.classList.remove("active");
+  }
 }
 
-//order html
+//remove item from order
+function removeItem(itemId) {
+  let targetObj = menuArray.find(function (obj) {
+    return obj.id === itemId;
+  });
+  if (order.includes(targetObj)) {
+    const index = order.indexOf(targetObj);
+    order.splice(index, 1);
+    renderOrder();
+  }
+  if (order.length < 1) {
+    orderBox.classList.add("active");
+    renderOrder();
+  }
+}
+
+//add item to order html
 function orderHtml() {
   let orderHtml = "";
   order.forEach(function (order) {
     orderHtml += `
-    <div class="card">
+    <div class="card" id="orders">
   <h4>${order.name}</h4>
   <button class="remove" data-remove="${order.id}">remove</button>
   <p>$${order.price}</p>
