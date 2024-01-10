@@ -1,8 +1,9 @@
 import { menuArray } from "./data.js";
 const orderBox = document.getElementById("order");
 const totalPriceEl = document.getElementById("total-price");
+
 let order = [];
-let totalPrice = 0;
+
 //eventlistener
 document.addEventListener("click", function (e) {
   e.preventDefault();
@@ -24,6 +25,7 @@ function handleClickAdd(itemId) {
     getTotalPrice(order);
     renderOrder();
     orderBox.classList.remove("active");
+  } else {
   }
 }
 
@@ -49,7 +51,6 @@ function getTotalPrice(arr) {
   let finalPrice = order.reduce(function (itemPrice, totalPrice) {
     return itemPrice + totalPrice.price;
   }, 0);
-  console.log(finalPrice);
   return (totalPriceEl.innerHTML = "$" + finalPrice);
 }
 
