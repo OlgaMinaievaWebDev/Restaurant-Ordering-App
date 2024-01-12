@@ -195,6 +195,7 @@ input:focus {
 }
 
 .thanks {
+  max-width: 500px;
   background-color: #ecfdf5;
   width: 504px;
   height: 120px;
