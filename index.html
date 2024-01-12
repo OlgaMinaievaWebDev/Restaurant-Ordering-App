@@ -16,15 +16,15 @@
        <!-- items render in js -->
       </main>
        <div class="order-box active" id="order">
-        
          <h2>Your Order</h2>
          <div class="order" id="addItem">
-          
-          <!-- render item in js -->
+          <!-- render menu item in js -->
          </div>
          <div class="line"></div>
          <div class="price">
-          <h4>Total price:</h4>
+          <h4>Total price:
+            <!-- render in js -->
+          </h4>
           <p id="total-price"></p>
          </div>
          <button class="complete" data-complete="complete">Complete Order</button>
@@ -32,19 +32,36 @@
       </div>
     </div>
     <div class="modal-box active" id="modal-form">
-    <form method="post" action="#" class="form">
+    <form action="#" class="form" id="form">
      <h2>Enter card Details</h2>
      <div class="information">
-     <div class="userName">
-     <input type="text" name="userName" placeholder="Enter your name" autocomplete="cc-name" required>
-     </div>
-     <div class="cardNumber">
-     <input type="text"  name="cardNumber" placeholder="Enter card number"  maxlength="16" required>
-     </div>
-     <div class="cvvNumber">
-     <input type="text" maxlength="3" name="cvvNumber" placeholder="Enter CVV" required>
-     </div>
-     <button class="complete" type="submit">Pay</button>
+       <input
+            type="text"
+            name="name"
+            id="fullName"
+            placeholder="Enter your full name"
+            aria-label="Full name"
+            required
+          />
+       <input
+            type="text"
+            name="card"
+            id="cardNumber"
+            placeholder="Enter card number"
+            aria-label="Card Number"
+            maxlength="12"
+            required
+          />
+          <input
+            type="text"
+            name="ccv"
+            id="ccv"
+            placeholder="Enter CCV"
+            aria-label="CCV"
+            maxlength="3"
+            required
+          />
+     <button class="modal" type="submit">Pay</button>
      </div>
     </form>
     </div>

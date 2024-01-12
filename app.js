@@ -4,9 +4,13 @@ const totalPriceEl = document.getElementById("total-price");
 
 let order = [];
 
+document.addEventListener("submit", function (e) {
+  console.log("yea");
+  e.preventDefault();
+});
+
 //eventlistener
 document.addEventListener("click", function (e) {
-  e.preventDefault();
   if (e.target.dataset.add) {
     handleClickAdd(e.target.dataset.add);
   } else if (e.target.dataset.remove) {
@@ -14,11 +18,6 @@ document.addEventListener("click", function (e) {
   } else if (e.target.dataset.complete) {
     completeOrder(e.target.dataset.complete);
   }
-});
-
-document.addEventListener("submit", function (e) {
-  e.preventDefault();
-  console.log("yeaaa");
 });
 
 //complete form
