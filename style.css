@@ -48,7 +48,7 @@ header span {
 .main {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  max-width: 500px;
   margin: 40px auto;
   gap: 15px;
 }
@@ -86,7 +86,7 @@ header span {
 .order-box {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  max-width: 500px;
   margin: 0 auto;
   margin-bottom: 40px;
   gap: 5px;
