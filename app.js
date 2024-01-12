@@ -1,13 +1,20 @@
 import { menuArray } from "./data.js";
 const orderBox = document.getElementById("order");
 const totalPriceEl = document.getElementById("total-price");
-
+const thanksEl = document.getElementById("thanks");
 let order = [];
 
-document.addEventListener("submit", function (e) {
-  console.log("yea");
-  e.preventDefault();
-});
+//thanks message
+function thanks() {
+  document.getElementById("modal-form").classList.add("active");
+}
+
+function reset() {
+  setTimeout(() => {
+    renderMenu();
+    thanksEl.classList.add("active");
+  }, 3000);
+}
 
 //eventlistener
 document.addEventListener("click", function (e) {
@@ -20,9 +27,24 @@ document.addEventListener("click", function (e) {
   }
 });
 
+//submit
+document.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const fullName = formData.get("name");
+  console.log(fullName);
+  document.getElementById(
+    "thx-message"
+  ).textContent = `Thanks, ${fullName}! Your order is on its way! `;
+  thanks();
+  reset();
+});
+
 //complete form
 function completeOrder() {
   document.getElementById("modal-form").classList.remove("active");
+  orderBox.classList.add("active");
+  thanksEl.classList.remove("active");
 }
 
 //add item to order
