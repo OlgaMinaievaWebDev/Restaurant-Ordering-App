@@ -92,8 +92,6 @@ header span {
   gap: 5px;
 }
 
-
-
 .order-box h2 {
   text-align: center;
   margin-bottom: 10px;
@@ -150,12 +148,12 @@ button:active {
 }
 
 .modal-box {
- display: block;
- position: absolute;
- top: 100px;
- left: 0;
- right: 0;
- bottom: 0;
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 form {
@@ -168,12 +166,11 @@ form {
   padding: 2rem;
   text-align: center;
   background-color: #ffffff;
-  
 }
-.information{
- display: flex;
- flex-direction: column;
- gap: 7px;
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 }
 
 input {
@@ -182,17 +179,16 @@ input {
   font-size: 16px;
 }
 
-input:focus{
- outline-color: #16db99;
+input:focus {
+  outline-color: #16db99;
 }
-
 
 .active {
   display: none;
 }
 
 .modal {
- background-color: #16db99;
+  background-color: #16db99;
   color: #ffffff;
   border: none;
   padding: 18px 175px;
@@ -200,4 +196,21 @@ input:focus{
   margin-top: 20px;
   font-size: 14px;
   font-weight: 600;
+}
+
+.thanks {
+  background-color: #ecfdf5;
+  width: 504px;
+  height: 120px;
+  color: #065f46;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.thanks h2 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
 }
